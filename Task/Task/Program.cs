@@ -11,6 +11,8 @@ namespace Task
     {
         static void Main(string[] args)
         {
+
+
             Invoice invoice = new Invoice(678904, "Alex", "Foxtrot")
             {
                 Article = "LaPtop",
