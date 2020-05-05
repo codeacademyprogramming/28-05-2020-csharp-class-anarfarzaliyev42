@@ -11,10 +11,11 @@ namespace Task
         private int account;
         private string customer;
         private string provider;
-        private double _productPrice;
+        private double _productPrice=0;
         private string _article;
         private double edv = 0.18;
-       private double finalPrice;
+       private double finalPrice=0;
+        private bool isProductExists = false;
         private IArticle[] articles = new IArticle[]
         {
             new Laptop(),
@@ -35,6 +36,7 @@ namespace Task
                     if (_article.ToLower() == article.Name.ToLower())
                     {
                         _productPrice = article.Price;
+                        isProductExists = true;
                     }
                 }
             }
@@ -55,16 +57,24 @@ namespace Task
 
         public void CostCalculation(bool needEdv)
         {
-            if (needEdv)
+            if (isProductExists)
             {
-                finalPrice= _productPrice* Quantity + (_productPrice*Quantity * edv);
-                Console.WriteLine($"Price is: {finalPrice}");
+                if (needEdv)
+                {
+                    finalPrice = _productPrice * Quantity + (_productPrice * Quantity * edv);
+                    Console.WriteLine($"Price is: {finalPrice}");
+                }
+                else
+                {
+                    finalPrice = _productPrice * Quantity;
+                    Console.WriteLine($"Price is: {finalPrice}");
+                }
             }
             else
             {
-                finalPrice= _productPrice * Quantity ;
-                Console.WriteLine($"Price is: {finalPrice}");
+                Console.WriteLine("Product not found");
             }
+            
         }
     }
 }
