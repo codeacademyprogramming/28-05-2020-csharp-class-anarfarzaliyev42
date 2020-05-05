@@ -36,16 +36,24 @@ namespace Task
                 switch (_article.ToLower())
                 {
                     case "laptop":
+
                         productPrice = 1400;
+
                         break;
                     case "sd-cadr":
+
                         productPrice = 30;
+
                         break;
                     case "usb-hab":
+
                         productPrice = 12;
+
                         break;
                     default:
+
                         productPrice = 0;
+
                         break;
 
                 }
