@@ -13,14 +13,7 @@ namespace Task
         {
 
 
-            Invoice invoice = new Invoice(678904, "Alex", "Foxtrot")
-            {
-                Article = "LaPtop",
-                Quantity = 2
-
-            };
-
-            invoice.CostCalculation(false);
+            
       
             Console.ReadKey();
         }
