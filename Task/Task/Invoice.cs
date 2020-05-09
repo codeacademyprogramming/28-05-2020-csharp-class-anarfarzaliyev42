@@ -8,9 +8,9 @@ namespace Task
 {
     class Invoice
     {
-        private string account;
-        private string customer;
-        private string provider;
+        private readonly string account;
+        private readonly string customer;
+        private readonly string provider;
         private double edv = 0.18;
         private double productPrice;
         private string _article;
@@ -22,7 +22,7 @@ namespace Task
             this.provider = provider;
         }
         public string Quantity { get; set; }
-
+    
 
         public string Article
         {
